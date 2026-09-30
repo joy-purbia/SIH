@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAHA-SKILL AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#f4f7fb;--s:#fff;--ink:#14213d;--mut:#5b6b85;--line:#dde4ee;--a:#0f766e;--a2:#e6f4f2;--w:#c2410c;--w2:#fff1e8;--r:#b91c1c;--g:#15803d;--sf:#f59e0b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Plus Jakarta Sans',system-ui,sans-serif}
+header{background:var(--s);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.top{max-width:1180px;margin:auto;padding:12px 16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;font-size:20px;letter-spacing:-.02em}.brand i{font-style:normal;color:var(--a)}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--mut);letter-spacing:0}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav button{border:0;background:none;padding:8px 14px;border-radius:8px;font:inherit;font-weight:600;color:var(--mut);cursor:pointer}
+nav button.on{background:var(--ink);color:#fff}
+nav button:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+main{max-width:1180px;margin:auto;padding:20px 16px 60px}
+h1{font-size:28px;letter-spacing:-.03em;margin:0 0 4px}h2{font-size:16px;margin:0 0 12px}
+.sub{color:var(--mut);margin:0 0 18px}
+.grid{display:grid;gap:14px}.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card{background:var(--s);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+.kpi b{display:block;font-size:30px;letter-spacing:-.03em;line-height:1.1}.kpi span{color:var(--mut);font-size:13px}
+.bar{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;margin:7px 0;font-size:14px}
+.bar div{height:10px;background:#e9eef5;border-radius:5px;overflow:hidden}.bar div i{display:block;height:100%;background:var(--a)}
+.bar.hi div i{background:var(--sf)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}th{color:var(--mut);font-weight:600;font-size:13px}
+.wrap{overflow-x:auto}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:13px;font-weight:600;margin:2px 3px 2px 0;background:#eef2f8;color:var(--ink)}
+.chip.ok{background:#e3f4ea;color:var(--g)}.chip.no{background:#fde8e8;color:var(--r)}.chip.wa{background:var(--w2);color:var(--w)}.chip.ai{background:var(--a2);color:var(--a)}
+.chip button{border:0;background:none;cursor:pointer;font-size:14px;color:inherit;padding:0}
+label{display:block;font-size:13px;font-weight:600;color:var(--mut);margin:10px 0 4px}
+select,input,textarea{width:100%;font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+textarea{min-height:90px;resize:vertical}
+.btn{background:var(--a);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:inherit;font-weight:700;cursor:pointer;margin-top:10px}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.row .btn{flex:none;margin:0}
+.alert{border-left:4px solid var(--w);background:var(--w2);padding:9px 12px;border-radius:6px;margin:8px 0;font-size:14px}
+.alert.r{border-color:var(--r);background:#fdecec}.alert.g{border-color:var(--g);background:#e9f6ee}
+.meter{height:14px;background:#e9eef5;border-radius:7px;overflow:hidden;margin:8px 0}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--sf),var(--a))}
+.big{font-size:40px;font-weight:800;letter-spacing:-.03em}
+.road{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:8px 0}
+.step{background:var(--a2);border:1px solid #bfe3de;border-radius:8px;padding:8px 12px;font-size:13px}.step b{display:block;font-size:14px}.step em{font-style:normal;color:var(--mut)}
+.arrow{align-self:center;color:var(--mut)}
+.stars button{border:0;background:none;font-size:20px;cursor:pointer;color:#cbd5e1;padding:0 1px}.stars button.on{color:var(--sf)}
+.pipe{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.pipe span{background:var(--s);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;font-weight:600}
+.note{font-size:12px;color:var(--mut);margin-top:10px}
+.up{color:var(--g)}.dn{color:var(--r)}
+pre{background:#0f1b33;color:#d7e3f7;padding:12px;border-radius:8px;overflow:auto;font-size:12.5px}
+.hero{background:var(--ink);color:#fff;border-radius:12px;padding:22px;margin-bottom:16px}
+.hero h1{font-size:30px}.hero p{color:#b7c4dc;margin:4px 0 12px}.hero .pipe span{background:#1e2f55;border-color:#2e4375;color:#fff}
+@media(max-width:600px){.bar{grid-template-columns:90px 1fr 34px}nav{margin-left:0}}
+</style></head><body>
+<header><div class="top"><div class="brand">MAHA-<i>SKILL</i> AI<small>Labour market intelligence and skill alignment, Maharashtra</small></div>
+<nav id="nav"></nav></div></header>
+<main id="app"></main>
+<script>
+const $=s=>document.querySelector(s);
+const ROLES={"Full Stack Developer":["HTML","CSS","JavaScript","React","Node.js","Express","MongoDB","REST API","AWS"],
+"Data Analyst":["Excel","SQL","Python","Power BI","Statistics","Data Visualization"],
+"Cloud Engineer":["Linux","Networking","AWS","Docker","Kubernetes","Terraform"],
+"AI/ML Engineer":["Python","Statistics","Machine Learning","Deep Learning","GenAI","Docker"],
+"Cybersecurity Analyst":["Networking","Linux","SIEM","Python","Incident Response"]};
+const ALIAS={"React":["react","reactjs","react.js","react js"],"Node.js":["node","nodejs","node.js","node js"],"MongoDB":["mongo","mongodb","mongo db"],
+"JavaScript":["javascript","js","java script"],"REST API":["rest api","restful api","rest apis","rest"],"AWS":["aws","amazon web services"],
+"Python":["python","py"],"SQL":["sql","mysql","postgresql"],"Express":["express","expressjs","express.js"],"HTML":["html","html5"],"CSS":["css","css3"],
+"Docker":["docker","containers"],"Kubernetes":["kubernetes","k8s"],"Machine Learning":["machine learning","ml"],"GenAI":["genai","generative ai","llm","llms"],
+"Power BI":["power bi","powerbi"],"Excel":["excel","ms excel","advanced excel"],"Linux":["linux","unix"],"Networking":["networking","tcp/ip","networks"],
+"SIEM":["siem","splunk"],"Terraform":["terraform","iac"],"Statistics":["statistics","statistical analysis"],"Deep Learning":["deep learning","neural networks"],
+"Data Visualization":["data visualization","tableau","dashboards"],"Incident Response":["incident response","soc"],"C++":["c++"],"PHP":["php"],"Java":["java"],"MS Office":["ms office","word","powerpoint"]};
+const esc=s=>s.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&');
+function extract(t){t=t.toLowerCase();const out=[],raw=[];
+for(const[k,al] of Object.entries(ALIAS)){for(const a of al){if(new RegExp('(^|[^a-z0-9+#.])'+esc(a)+'(?![a-z0-9+#])','i').test(t)){out.push(k);if(a!==k.toLowerCase())raw.push([a,k]);break}}}return{skills:out,raw}}
+const DISTRICTS={Pune:1.0,Mumbai:.95,Nagpur:.7,Nashik:.62,"Chhatrapati Sambhajinagar":.58,Kolhapur:.45};
+const DB={"React":[87,28],"Node.js":[79,22],"AWS":[73,31],"Python":[91,19],"MongoDB":[68,14],"Docker":[62,26],"GenAI":[55,64],"SQL":[84,6],"Power BI":[58,17],"Machine Learning":[60,30],"Kubernetes":[48,24],"Cybersecurity/SIEM":[52,21],"PHP":[34,-18],"MS Office":[30,-22],"Flash/Legacy":[12,-40]};
+const dd=(k,d)=>Math.round(DB[k][0]*DISTRICTS[d]*(1+((k.length*7+d.length*3)%9-4)/60));
+const COURSES={"Web Development (Basic)":{role:"Full Stack Developer",has:["HTML","CSS","JavaScript","PHP"],trained:420,dem:150},
+"Full Stack Development":{role:"Full Stack Developer",has:["HTML","CSS","JavaScript","React","Express"],trained:180,dem:260},
+"Data Analytics Certificate":{role:"Data Analyst",has:["Excel","SQL","Statistics"],trained:300,dem:210},
+"Cloud Computing Foundations":{role:"Cloud Engineer",has:["Linux","Networking"],trained:90,dem:240},
+"Office Automation":{role:"Data Analyst",has:["Excel","MS Office"],trained:500,dem:90},
+"Cyber Security Basics":{role:"Cybersecurity Analyst",has:["Networking","Linux"],trained:70,dem:110}};
+const JOBS=[["Junior Full Stack Developer","Pune Tech Labs",["HTML","CSS","JavaScript","React","Node.js"]],["MERN Intern","Nashik Digital",["JavaScript","React","MongoDB","Express"]],["Backend Developer","Mumbai FinServ",["Node.js","MongoDB","REST API","AWS"]],["Data Analyst Trainee","Nagpur Analytics",["Excel","SQL","Python","Power BI"]],["Cloud Support Engineer","Pune Cloudworks",["Linux","AWS","Docker","Networking"]],["ML Intern","Mumbai AI Studio",["Python","Machine Learning","Statistics"]],["SOC Analyst","Nagpur SecOps",["SIEM","Networking","Linux","Incident Response"]]];
+const LVL=["Beginner","Beginner","Intermediate","Intermediate","Advanced"];
+const SRC=["NPTEL / Skill India course","Government skill portal module","Open-source docs + mini project","Industry certificate track","Capstone project"];
+const opt=(o,s)=>Object.keys(o).map(k=>`<option ${k===s?'selected':''}>${k}</option>`).join('');
+const chips=(a,c)=>a.map(x=>`<span class="chip ${c}">${x}</span>`).join('')||'<span class="note">None</span>';
+const S={tab:'gov',dist:'Pune',role:'Full Stack Developer',skills:["HTML","CSS","JavaScript"],course:"Web Development (Basic)",eRole:'Full Stack Developer',rate:{}};
+const TABS={gov:'Government',stu:'Student',inst:'Institute',emp:'Employer',ai:'AI Lab'};
+function nav(){$('#nav').innerHTML=Object.entries(TABS).map(([k,v])=>`<button class="${S.tab===k?'on':''}" onclick="S.tab='${k}';render()">${v}</button>`).join('')}
+function roadmap(missing){return'<div class="road">'+missing.map((m,i)=>`<div class="step"><b>${m}</b><em>${LVL[Math.min(i,4)]}</em><br><em>${SRC[Math.min(i,4)]}</em></div>`).join('<span class="arrow">›</span>')+'</div>'}
+/* GOV */
+function gov(){const d=S.dist;const sk=Object.keys(DB).map(k=>[k,dd(k,d),DB[k][1]]).sort((a,b)=>b[1]-a[1]);
+const cur=Object.values(COURSES);const cs=Object.entries(COURSES).map(([n,c])=>{const need=ROLES[c.role],cov=Math.round(c.has.filter(x=>need.includes(x)).length/need.length*100);return{n,c,cov}});
+const over=cs.filter(x=>x.c.trained>x.c.dem*1.4),short=cs.filter(x=>x.c.dem>x.c.trained*1.3);
+const why=sk[0];
+return`<h1>District skill intelligence</h1><p class="sub">Demo data for illustration. Pick a district to see local demand, gaps and the training plan.</p>
+<div class="card" style="margin-bottom:14px"><label for="d">District</label><select id="d" onchange="S.dist=this.value;render()">${opt(DISTRICTS,d)}</select></div>
+<div class="grid g4"><div class="card kpi"><b>36</b><span>Districts covered</span></div><div class="card kpi"><b>1,240</b><span>Active roles tracked</span></div><div class="card kpi"><b>3,850</b><span>Skills analysed</span></div><div class="card kpi"><b style="color:var(--w)">${over.length+short.length+cs.filter(x=>x.cov<60).length}</b><span>Alerts for ${d}</span></div></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h2>Top skills in demand, ${d}</h2>${sk.slice(0,8).map(s=>`<div class="bar"><span>${s[0]}</span><div><i style="width:${Math.min(100,s[1])}%"></i></div><b>${s[1]}</b></div>`).join('')}</div>
+<div class="card"><h2>Emerging and declining skills (12-month trend)</h2><div class="wrap"><table><tr><th>Skill</th><th>Demand</th><th>Growth</th><th>Signal</th></tr>${[...sk].sort((a,b)=>b[2]-a[2]).filter((_,i,a)=>i<4||i>a.length-4).map(s=>`<tr><td>${s[0]}</td><td>${s[1]}</td><td class="${s[2]>0?'up':'dn'}">${s[2]>0?'▲':'▼'} ${Math.abs(s[2])}%</td><td>${s[2]>40?'Emerging':s[2]>0?'Growing':s[2]<-30?'Obsolete':'Declining'}</td></tr>`).join('')}</table></div></div></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h2>Curriculum alignment by course</h2><div class="wrap"><table><tr><th>Course</th><th>Industry fit</th><th>Action</th></tr>${cs.map(x=>`<tr><td>${x.n}</td><td><b>${x.cov}%</b></td><td>${x.cov<50?'<span class="chip no">Update now</span>':x.cov<75?'<span class="chip wa">Review</span>':'<span class="chip ok">Aligned</span>'}</td></tr>`).join('')}</table></div></div>
+<div class="card"><h2>Supply and demand alerts</h2>${over.map(x=>`<div class="alert r"><b>Oversupplied:</b> ${x.n}. ${x.c.trained} trained against about ${x.c.dem} local openings (gap ${x.c.trained-x.c.dem}). Review capacity.</div>`).join('')}${short.map(x=>`<div class="alert"><b>Shortage:</b> ${x.n}. Only ${x.c.trained} trained for about ${x.c.dem} openings. Expand seats and trainers.</div>`).join('')}<div class="alert r"><b>Obsolete signal:</b> PHP-only and MS Office-only modules show falling demand for 4 quarters. Flag for review.</div></div></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h2>Explainable AI: why ${why[0]}?</h2><div class="alert g"><b>Recommendation:</b> increase ${why[0]} training capacity in ${d}.</div><p style="margin:6px 0">✓ Job postings mentioning ${why[0]}: ${why[1]*14}<br>✓ Demand growth: ${why[2]>0?'+':''}${why[2]}%<br>✓ District supply: Low<br>✓ Employer validation: High<br>✓ Existing curriculum coverage: Low</p><p class="note">Flow: AI analysis → recommendation → employer validation → government review → final decision.</p></div>
+<div class="card"><h2>AI-generated training plan, ${d}</h2><p style="margin:0 0 6px"><b>Priority 1:</b> Add ${sk[0][0]}, ${sk[1][0]}, ${sk[2][0]} modules to Full Stack and Cloud courses.</p><p style="margin:0 0 6px"><b>Priority 2:</b> Upskill ${Math.max(4,Math.round(DISTRICTS[d]*12))} trainers in ${sk[3][0]} and GenAI.</p><p style="margin:0 0 6px"><b>Priority 3:</b> Set up ${d==='Pune'||d==='Mumbai'?'2 cloud labs':'1 shared cloud lab'} and reduce intake for oversupplied office courses.</p><p class="note">Regional differences: each district gets its own plan, not one state-wide template.</p></div></div>`}
+/* STUDENT */
+function stu(){const need=ROLES[S.role],have=S.skills,ok=need.filter(x=>have.includes(x)),miss=need.filter(x=>!have.includes(x)),pct=Math.round(ok.length/need.length*100);
+const jobs=JOBS.map(j=>({j,m:Math.round(j[2].filter(x=>have.includes(x)).length/j[2].length*100)})).sort((a,b)=>b.m-a.m).slice(0,4);
+return`<h1>Student skill profile</h1><p class="sub">Add skills or paste a resume. The AI extracts and normalises them, then finds the gap to your target role.</p>
+<div class="grid g2"><div class="card"><h2>Your profile</h2><label>Resume text (AI extraction)</label><textarea id="res" placeholder="e.g. Built a portfolio with HTML5, CSS3 and JS. Knowledge of ReactJS and Mongo DB. Studied C++."></textarea>
+<button class="btn" onclick="const r=extract($('#res').value);S.skills=[...new Set([...S.skills,...r.skills])];render()">Extract skills with AI</button>
+<label>Add a skill manually</label><div class="row"><input id="ns" list="sl" placeholder="Type a skill"><datalist id="sl">${Object.keys(ALIAS).map(k=>`<option>${k}`).join('')}</datalist><button class="btn alt" onclick="const v=extract($('#ns').value).skills[0]||$('#ns').value.trim();if(v&&!S.skills.includes(v))S.skills.push(v);render()">Add</button></div>
+<label>Current skills</label><div>${S.skills.map(s=>`<span class="chip">${s}<button aria-label="Remove ${s}" onclick="S.skills=S.skills.filter(x=>x!=='${s}');render()">×</button></span>`).join('')||'<span class="note">Add a skill to begin.</span>'}</div>
+<label for="tr">Target role</label><select id="tr" onchange="S.role=this.value;render()">${opt(ROLES,S.role)}</select></div>
+<div class="card"><h2>Skill gap analysis</h2><div class="big">${pct}% <span style="font-size:15px;font-weight:600;color:var(--mut)">match for ${S.role}</span></div><div class="meter"><i style="width:${pct}%"></i></div>
+<p style="margin:6px 0">Skill match: ${ok.length} / ${need.length}. Gap: ${miss.length} skills.</p><div>${chips(ok,'ok')}${chips(miss,'no')}</div></div></div>
+<div class="card" style="margin-top:14px"><h2>Personalised learning roadmap</h2>${miss.length?roadmap(miss):'<div class="alert g">You cover every required skill. Apply for roles below.</div>'}</div>
+<div class="card" style="margin-top:14px"><h2>Jobs and internships that fit now</h2><div class="wrap"><table><tr><th>Role</th><th>Company</th><th>Match</th><th>Missing</th></tr>${jobs.map(x=>`<tr><td>${x.j[0]}</td><td>${x.j[1]}</td><td><b>${x.m}%</b></td><td>${x.j[2].filter(s=>!have.includes(s)).join(', ')||'None'}</td></tr>`).join('')}</table></div></div>`}
+/* INSTITUTE */
+function inst(){const c=COURSES[S.course],need=ROLES[c.role],ok=need.filter(x=>c.has.includes(x)),miss=need.filter(x=>!c.has.includes(x)),extra=c.has.filter(x=>!need.includes(x)),pct=Math.round(ok.length/need.length*100);
+return`<h1>Training institute dashboard</h1><p class="sub">Compare your course with industry demand for its target role in ${S.dist}.</p>
+<div class="grid g2"><div class="card"><h2>Course details</h2><label for="c">Course</label><select id="c" onchange="S.course=this.value;render()">${opt(COURSES,S.course)}</select>
+<label>Target role</label><input value="${c.role}" readonly><label>Students trained per year</label><input value="${c.trained}" readonly><label>Estimated local openings</label><input value="${c.dem}" readonly>
+<label>Current curriculum</label><div>${chips(c.has,'')}</div></div>
+<div class="card"><h2>AI alignment result</h2><div class="big">${pct}% <span style="font-size:15px;font-weight:600;color:var(--mut)">aligned</span></div><div class="meter"><i style="width:${pct}%"></i></div>
+<div>${chips(ok,'ok')}${chips(miss,'no')}${chips(extra,'wa')}</div><p class="note">Green: matches industry. Red: missing. Orange: not in current demand for this role.</p>
+<div class="alert ${pct<60?'r':''}"><b>Recommendation:</b> ${pct>=85?'Curriculum is healthy. Keep monitoring trends.':`Add ${miss.slice(0,4).join(', ')} to the curriculum.`}${pct<75?' Upskill trainers and add a lab for these topics.':''}${c.trained>c.dem*1.4?' Reduce intake: supply exceeds demand.':''}${c.dem>c.trained*1.3?' Increase seats: demand exceeds supply.':''}</div></div></div>
+<div class="card" style="margin-top:14px"><h2>Trainer and equipment planning</h2><div class="grid g4"><div class="card kpi"><b>${Math.max(1,Math.ceil(miss.length*1.5))}</b><span>Trainers to upskill</span></div><div class="card kpi"><b>${miss.some(m=>['AWS','Docker','Kubernetes','Terraform'].includes(m))?'Cloud lab':'Standard lab'}</b><span>Equipment needed</span></div><div class="card kpi"><b>${Math.round(c.trained*pct/100)}</b><span>Expected job-ready trainees</span></div><div class="card kpi"><b>${Math.round(c.dem/Math.max(c.trained,1)*100)}%</b><span>Demand vs supply</span></div></div></div>`}
+/* EMPLOYER */
+function emp(){const need=ROLES[S.eRole];
+return`<h1>Employer portal</h1><p class="sub">Tell the platform what you need and how well each skill must be known. Your input validates AI findings.</p>
+<div class="grid g2"><div class="card"><h2>Skill requirements</h2><label for="er">Role</label><select id="er" onchange="S.eRole=this.value;S.rate={};render()">${opt(ROLES,S.eRole)}</select>
+${need.map(s=>`<div class="row" style="margin-top:8px"><span style="flex:1 1 40%">${s}</span><span class="stars" style="flex:1 1 50%">${[1,2,3,4,5].map(n=>`<button aria-label="${s} ${n} stars" class="${(S.rate[s]||0)>=n?'on':''}" onclick="S.rate['${s}']=${n};render()">★</button>`).join('')}</span></div>`).join('')}
+<button class="btn" onclick="S.sent=1;render()">Submit requirements</button>${S.sent?'<div class="alert g" style="margin-top:10px">Saved. Your input now feeds district demand scores and curriculum checks.</div>':''}</div>
+<div class="card"><h2>Validate and give feedback</h2><p class="sub" style="margin-bottom:8px">AI signals waiting for employer validation</p>
+${[["GenAI demand is rising in Pune","Emerging"],["Docker is now expected for Full Stack roles","Skill shift"],["PHP-only candidates are hard to place","Obsolete signal"]].map(a=>`<div class="alert" style="display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap"><span>${a[0]} <span class="chip wa">${a[1]}</span></span><span><button class="btn alt" style="margin:0" onclick="this.parentNode.innerHTML='<span class=\\'chip ok\\'>Confirmed</span>'">Agree</button> <button class="btn alt" style="margin:0" onclick="this.parentNode.innerHTML='<span class=\\'chip no\\'>Disputed</span>'">Disagree</button></span></div>`).join('')}
+<label>Rate recent trainee quality</label><select><option>Job-ready</option><option>Needs some training</option><option>Not job-ready</option></select><label>Suggest an emerging skill</label><input placeholder="e.g. Vector databases"></div></div>`}
+/* AI LAB */
+function ai(){return`<h1>AI lab</h1><p class="sub">Job description intelligence and skill normalisation. Runs in your browser with a rule-based demo. The full system uses NLP, embeddings and an LLM.</p>
+<div class="grid g2"><div class="card"><h2>Job description analyser</h2><textarea id="jd">Looking for a Full Stack Developer with ReactJS, Node js, Mongo DB, RESTful APIs and Amazon Web Services experience. 1-3 years. Docker is a plus.</textarea><button class="btn" onclick="jd()">Analyse with AI</button></div>
+<div class="card"><h2>Extracted output</h2><div id="jo"><p class="note">Run the analyser to see structured skills.</p></div></div></div>
+<div class="card" style="margin-top:14px"><h2>End-to-end intelligence loop</h2><div class="pipe"><span>Job posts, surveys, course and placement data</span>›<span>AI skill extraction</span>›<span>Skill normalisation</span>›<span>Skill knowledge graph</span>›<span>Gap, curriculum and trend engines</span>›<span>District training plan</span>›<span>Students, institutes, employers</span>›<span>Placement feedback</span>↺</div></div>
+<div class="card" style="margin-top:14px"><h2>Skill knowledge graph (sample chain)</h2><div class="pipe"><span>React</span>›<span>Frontend</span>›<span>Full Stack Developer</span>›<span>Full Stack Development course</span>›<span>Training institute</span>›<span>Pune district</span></div></div>`}
+function jd(){const t=$('#jd').value,r=extract(t),ex=t.match(/(\d+)\s*[-–to]+\s*(\d+)\s*years?/i),role=Object.keys(ROLES).find(k=>t.toLowerCase().includes(k.toLowerCase()))||'Not detected';
+$('#jo').innerHTML=`<pre>${JSON.stringify({role,skills:r.skills,experience:ex?ex[1]+'-'+ex[2]+' years':'not stated'},null,2)}</pre><p style="margin:8px 0 4px"><b>Normalised:</b></p>${r.raw.map(x=>`<span class="chip ai">${x[0]} → ${x[1]}</span>`).join('')||'<span class="note">All names were already standard.</span>'}`}
+function render(){nav();$('#app').innerHTML=(S.tab==='gov'&&!S.seen?`<div class="hero"><h1>Right skills. Right training. Right jobs.</h1><p>An AI decision-support layer that links what industry needs to what institutes teach and what students learn.</p><div class="pipe"><span>Industry demand</span>›<span>AI skill intelligence</span>›<span>Curriculum update</span>›<span>Training plan</span>›<span>Employability</span></div></div>`:'')+{gov,stu,inst,emp,ai}[S.tab]();}
+render();
+</script></body></html>
